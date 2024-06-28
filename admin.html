@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <style>
+      /* CSS yang sudah ada */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center; /* Mengatur konten ke tengah horizontal */
+        align-items: center; /* Mengatur konten ke tengah vertikal */
+        height: 100vh; /* Untuk mengisi tinggi layar */
+        margin: 0; /* Menghilangkan margin bawaan */
+      }
+
+      .sidebar {
+        height: 100vh;
+        width: 200px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #333;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 18px;
+        color: white;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .sidebar a:hover {
+        background-color: #575757;
+      }
+
+      .main-content {
+        margin-left: 220px;
+        padding: 20px;
+        width: 80%; /* Lebar konten utama */
+        max-width: 1200px; /* Lebar maksimum konten */
+      }
+
+      .card {
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      .crud-buttons button {
+        padding: 5px 10px;
+        margin-right: 5px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      .crud-buttons .edit {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .crud-buttons .delete {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .crud-buttons .add {
+        background-color: #008cba;
+        color: white;
+      }
+
+      /* CSS tambahan untuk mengatur tampilan awal */
+      .card {
+        display: none; /* Sembunyikan semua card secara default */
+      }
+
+      .card.active {
+        display: block; /* Tampilkan card yang aktif */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sidebar">
+      <a href="#dashboard">Dasbor</a>
+      <a href="#Artikel">Artikel</a>
+      <a href="#skills">Skill</a>
+      <a href="#projects">Project</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="main-content">
+      <h1>Admin Dashboard</h1>
+
+      <div id="dashboard" class="card">
+        <h2>Dasbor</h2>
+        <p>Selamat datang di halaman admin.</p>
+      </div>
+
+      <div id="Artikel" class="card">
+        <h2>Artikel</h2>
+        <div class="crud-buttons">
+          <button class="add">Tambah Artikel</button>
+        </div>
+        <table>
+          <tr>
+            <th>Nama Artikel</th>
+            <th>Deskripsi</th>
+            <th>
+              <label for="gambar">Gambar</label>
+            </th>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Ahli</td>
+            <td class="crud-buttons">
+              <button class="edit">
+                <a href="edit_artikel.php">Edit</a>
+              </button>
+              <button class="delete" onclick="deleteData('JavaScript')">
+                Hapus
+              </button>
+            </td>
+            <td>
+              <input type="file" id="gambar" name="gambar" />
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="skills" class="card">
+        <h2>Skill</h2>
+        <div class="crud-buttons">
+          <button class="add">Tambah Skill</button>
+        </div>
+        <table>
+          <tr>
+            <th>Nama Skill</th>
+            <th>Range</th>
+            <th>Aksi</th>
+          </tr>
+          <tr>
+            <td>JavaScript</td>
+            <td>Ahli</td>
+            <td class="crud-buttons">
+              <button class="edit" onclick="editData('JavaScript')">
+                Edit
+              </button>
+              <button class="delete" onclick="deleteData('JavaScript')">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="projects" class="card">
+        <h2>Project</h2>
+        <div class="crud-buttons">
+          <button class="add">Tambah Project</button>
+        </div>
+        <table>
+          <tr>
+            <th>Nama Project</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
+          </tr>
+          <tr>
+            <td>Website Portofolio</td>
+            <td>Membuat website portofolio pribadi.</td>
+            <td class="crud-buttons">
+              <button class="edit" onclick="editData('Website Portofolio')">
+                Edit
+              </button>
+              <button class="delete" onclick="deleteData('Website Portofolio')">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="experience" class="card">
+        <h2>Experience</h2>
+        <div class="crud-buttons">
+          <button class="add">Tambah Experience</button>
+        </div>
+        <table>
+          <tr>
+            <th>Posisi</th>
+            <th>Perusahaan</th>
+            <th>Tahun</th>
+            <th>Aksi</th>
+          </tr>
+          <tr>
+            <td>Software Engineer</td>
+            <td>ABC Tech</td>
+            <td>2018-2020</td>
+            <td class="crud-buttons">
+              <button class="edit" onclick="editData('Software Engineer')">
+                Edit
+              </button>
+              <button class="delete" onclick="deleteData('Software Engineer')">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="contact" class="card">
+        <h2>Kontak</h2>
+        <div class="crud-buttons">
+          <button class="add">Tambah Kontak</button>
+        </div>
+        <table>
+          <tr>
+            <th>Jenis Kontak</th>
+            <th>Detail</th>
+            <th>Aksi</th>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>john.doe@example.com</td>
+            <td class="crud-buttons">
+              <button class="edit-active" onclick="editData('Email')">
+                Edit
+              </button>
+              <button class="delete-active" onclick="deleteData('Email')">
+                Hapus
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      function editData(name) {
+        // Contoh aksi edit
+        console.log(`Edit data ${name}`);
+        // Implementasikan logika edit sesuai kebutuhan Anda
+        // Misalnya, tampilkan form edit di modal
+      }
+
+      function deleteData(name) {
+        // Contoh aksi hapus
+        console.log(`Hapus data ${name}`);
+        // Implementasikan logika hapus sesuai kebutuhan Anda
+        // Misalnya, konfirmasi penghapusan dan kirim permintaan DELETE via AJAX
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarLinks = document.querySelectorAll(".sidebar a");
+        const cards = document.querySelectorAll(".card");
+
+        sidebarLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetId = link.getAttribute("href").substring(1); // Ambil ID target tanpa tanda '#'
+            cards.forEach((card) => {
+              if (card.id === targetId) {
+                card.classList.add("active"); // Tampilkan card yang sesuai dengan link yang diklik
+              } else {
+                card.classList.remove("active"); // Sembunyikan card yang tidak sesuai
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

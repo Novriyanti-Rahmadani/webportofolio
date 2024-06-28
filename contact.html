@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <link rel="icon" href="assets/img/logo.png" />
+    <!-- Style Sendiri -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Kontak</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg color-nav">
+      <div class="container-fluid container">
+        <img
+          src="assets/img/logo.png"
+          alt="Novriyanti Rahmadani logo"
+          height="70"
+        />
+        <button
+          class="navbar-toggler bg-white"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-end w-100 align-items-center"
+          >
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Article.html">Article</a>
+            </li>
+            <li class="nav-item" id="home">
+              <a class="nav-link active" aria-current="page" href="Contact.html"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Kontak -->
+    <section class="pekerjaan py-5" id="pekerjaan">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-6 my-auto">
+            <h1>Kontak Kami</h1>
+            <p>
+              Silahkan tinggalkan pesan maupun pertanyaan anda pada kolom yang
+              tersedia
+            </p>
+            <div class="container text-center">
+              <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                  <a href="#"><i class="fa fa-facebook fa-4x"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fa fa-twitter fa-4x"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#"><i class="fa fa-instagram fa-4x"></i></a>
+                </li>
+                <li class="list-inline-item">
+                  <a
+                    href="https://www.instagram.com/novrirhmdnii_?igsh=ZnF3eG5oZDY2a3Ji"
+                    ><i class="fa fa-pinterest fa-4x"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card w-100 p-4">
+              <form action="">
+                <div class="mb-3">
+                  <label for="nama" class="form-label fw-semibold"
+                    >Nama Lengkap</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nama"
+                    placeholder="Masukkan Nama Anda"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="No. Telepon" class="form-label fw-semibold"
+                    >No. Telepon</label
+                  >
+                  <input
+                    type="No. Telepon"
+                    class="form-control"
+                    id="No. Telepon"
+                    placeholder="Masukkan No. Telepon Anda"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label fw-semibold"
+                    >Email</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Masukkan Email Anda"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="pesan" class="form-label fw-semibold"
+                    >Pesan</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="pesan"
+                    rows="3"
+                    placeholder="Masukkan Pesan Anda"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary px-5">
+                  Kirim
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container col-12 text-center">
+        <div class="footer_copyright">
+          <p>© 2024 Webportofolio. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
